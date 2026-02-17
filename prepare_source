@@ -1,0 +1,2 @@
+apt_src coreutils
+apply_patches

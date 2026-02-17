@@ -1,0 +1,11 @@
+--- a/debian/rules 
++++ b/debian/rules 
+@@ -34,7 +34,7 @@
+ 	# don't do this
+ 
+ override_dh_auto_configure:
+-	dh_auto_configure -- --enable-systemd --enable-install-program=arch --with-openssl=auto-gpl-compat --with-packager=$(DEB_VENDOR) --with-packager-version=$(DEB_VERSION) $(Y2038)
++	dh_auto_configure -- --enable-systemd --enable-install-program=arch --enable-no-install-program="sha1sum,sha224sum,sha256sum,sha384sum,sha512sum,md5sum" --with-openssl=auto-gpl-compat --with-packager=$(DEB_VENDOR) --with-packager-version=$(DEB_VERSION) $(Y2038)
+ 
+ %:
+ 	dh $@
